@@ -17,16 +17,13 @@ public abstract class ChessPiece {
 	private Square currSq;
 	private boolean check = false;
 	
-	//Constructor :  you will need some more parameters!
+	//Constructor
 	public ChessPiece(String im, boolean tm, Square sq){
 		loadImage(im);
 		currSq = sq;
 		black = tm;
-	    
-		//set up your other variables
 
-
-	}//end constructor
+	}
 	
 	//returns current square
 	public Square getSquare()
@@ -47,7 +44,7 @@ public abstract class ChessPiece {
 		return black;
 	}
 	
-	//helper function for loading up your image
+	//helper function for loading image
 	private void loadImage( String im ){
 		img = Toolkit.getDefaultToolkit().getImage( getClass().getResource(im) );		
 	    
@@ -58,7 +55,7 @@ public abstract class ChessPiece {
 	        catch (InterruptedException e) {
 	        	JOptionPane.showMessageDialog(null, "Error reading file");
 	        }
-	}//end loadImage
+	}
 
 	public void draw(Graphics g){
 		g.drawImage(img,0,0,90,90,null,null);
@@ -134,14 +131,9 @@ public abstract class ChessPiece {
 			this.setSquare(dest);
 			
 			
-			//Check
-			//int danger = 0;
-			//check = false;
+			
 			boolean checkmateConfirm = true;
 			boolean otherColor;
-			//ChessPiece theKing = null;
-			//ChessPiece theKiller = null;
-			//ChessPiece confirmKiller = null;
 			if(this.getColor())
 				otherColor = false;
 			else
