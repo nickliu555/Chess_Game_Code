@@ -5,7 +5,7 @@ public class GameBoard extends JFrame{
 	private static final int ROWS = 8, COLS = 8;
 	//you'll need a 2d array
 	Square s[][];
-	//you'll need variables to keep track of the 1st and 2nd squares that were clicked
+	//keep track of the 1st and 2nd squares that were clicked
 	Boolean first = true;
 	int r;
 	int rr;
@@ -19,10 +19,9 @@ public class GameBoard extends JFrame{
 		
 		this.setLayout(new GridLayout(ROWS,COLS));
 		boolean black = false;
-		//be sure to instantiate the array
 		s = new Square[ROWS][COLS];
 
-		//now you'll need to birth each element of the array AND add it to the Frame 
+		//birth each element of the array AND add it to the Frame 
 		for(int r=0; r<ROWS; r++)
 		{
 			for(int c=0; c<COLS; c++)
@@ -43,7 +42,6 @@ public class GameBoard extends JFrame{
 		for(int i=0; i<8; i++)
 		{
 			Pawn p = new Pawn("housestark.png", false, s[6][i]);
-			//s[6][i].setPiece(p);
 		}
 		
 		
@@ -61,7 +59,6 @@ public class GameBoard extends JFrame{
 		for(int i=0; i<8; i++)
 		{
 			Pawn p = new Pawn("houselannister.png", true, s[1][i]);
-			//s[1][i].setPiece(p);
 		}
 		
 		King lk = new King("TywinLannister.png",true, s[0][4]);
